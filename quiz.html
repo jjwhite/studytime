@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="utf-8">
+	<title>Study Time:Quiz</title>
+	
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">	
+	<link href="css/styles.css" rel="stylesheet" type="text/css"/>	
+	
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/quizcontroller.js"></script>
+</head>
+
+<body ng-controller="QuizController">
+<div class="header"><img src="images/logo.png"/></div>
+
+<div class="quiz-title">
+	<h1>Studying For: {{quiz.title}}</h1>
+</div>
+
+<div class="main-wrapper">
+	<div class="quiz-question">
+		<p>{{quiz.questions[quiz.activeIX].QuestionText}}</p>
+		<ul>
+			<li ng-repeat="answer in quiz.questions[quiz.activeIX].Answers" ng-click="checkAnswer(answer)" ng-class="{correct : answer.isAnswer == 1 && answer.isSelected, incorrect : answer.isAnswer == 0 && answer.isSelected}" >
+				{{answer.AnswerText}}
+			</li>
+		</ul>
+	</div>
+	
+	<button id="Next" class="btn btn-default" ng-click="nextQuestion()" ng-class="{show : quiz.showNext, hide : !quiz.showNext}">Next Question <span class="glyphicon glyphicon-chevron-right"></span></button>
+	
+	<div class="number-correct">
+		Number Correct: {{quiz.numCorrect}} / {{quiz.questions.length}}
+	</div>
+</div>
+
+<!--<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Launch demo modal</a>-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">{{quiz.title}} Complete!</h4>
+        </div>
+        <div class="modal-body">
+			You got {{quiz.numCorrect}} correct 
+			out of {{quiz.questions.length}} questions!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" ng-click="resetQuiz()">Try Again!</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</body>
+
+</html>

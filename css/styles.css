@@ -1,0 +1,81 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/******** END RESET ******************/
+
+#problem {width:500px; margin:0px auto 0px auto; border:solid 1px #000; border-radius: 20px;padding:20px; box-shadow: 10px 10px 5px #888888;}
+#operator {float:left;}
+#answer {height:200px;}
+#top {margin-left:104px; }
+#bottom {padding-bottom:10px; border-bottom:solid 2px #000;}
+/*#start_button {background-image:url('data:image/gif;base64,R0lGODlhFQAVAMIEAAMGAkFDQHN1csnLx////////////////yH5BAEKAAQALAAAAAAVABUAAANJSLrc/kQAICCUk1qX827d9DEhMC7lqaQqe7pQYBIsEDzSEHXVoDm+yu6XiwF0Dd8N4qMgBxgkUxYKSDfQieD6mqlQ3i8tLP4kAAA7') }*/
+#start_button {border-radius: 999px; background-color:#fff; border:solid 1px #666;}
+
+.large-text {font-size: 200px;}
+.info-box {width:150px; border-radius: 10px; font-size: 20px; line-height: 50px; height:50px; border: solid 2px #666; background-color: #ccc;}
+.time {float:right;}
+
+div.header {height:100px; margin-bottom:20px; background-color:#385647; color:#fff;}
+div.header img {margin:15px 0px 0px 20px;}
+
+/*********** Multiple Choice *******************/
+body {font-family:Arial;}
+div.quiz-title h1 {width:800px; margin:30px auto 30px auto; font-size:20px; font-weight:bold;}
+div.main-wrapper {position:relative; width:800px; min-height:400px; background-color:#385647; color:#fff; border-radius:10px; padding:20px; margin:0px auto 0px auto; }
+div.quiz-question p {font-size:28px; display:block; margin:0 0 50px 0;}
+div.quiz-question ul li {display:block; width:45%; float:left; min-height:55px; border:solid 2px #fff; border-radius:10px; margin:0px 15px 15px 0px; text-align:center; padding:10px; cursor:pointer; font-size:16px;}
+div.quiz-question ul li:hover {background-color:#fff; color:#000;}
+div.quiz-question ul li.correct {background-color:LightGreen; color:#000;}
+div.quiz-question ul li.incorrect {background-color:LightCoral;}
+
+button.show {display:block;}
+button.hide {display:none;}
+#Next {float:right;}
+div.number-correct {position:absolute; bottom:0px; right:0px; padding:10px;}
+
